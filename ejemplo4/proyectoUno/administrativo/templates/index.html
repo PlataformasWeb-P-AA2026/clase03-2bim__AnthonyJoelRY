@@ -11,10 +11,19 @@
       onclick="return confirm('¿Está seguro de la eliminación?')" >
       eliminar</a>]
   </li>
-
 {% endfor %} 
+  <br />
+[<a href="{% url 'crear_estudiante' %}">agregar estudiante</a>]
+</ul>
+<h3>Listado de países {{ numero_paises }}</h3>
+<ul>
+ {% for p in pais %}
+  <li>
+    {{p.nombre}} [<a href="{% url 'obtener_pais' p.id %}">ver</a>] 
+  </li>
+{% endfor %} 
+  <br />
+[<a href="{% url 'crear_pais' %}">agregar país</a>] 
 </ul>
 
-<br />
-[<a href="{% url 'crear_estudiante' %}">agregar estudiante</a>]
 
