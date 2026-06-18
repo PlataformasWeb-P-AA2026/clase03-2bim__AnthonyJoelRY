@@ -3,9 +3,9 @@
     administrativo
 """
 from django.urls import path
+
 # se importa las vistas de la aplicación
 from . import views
-
 
 urlpatterns = [
         path('', views.index, name='index'),
@@ -13,4 +13,7 @@ urlpatterns = [
             name='listadoEstudiates'),
         path('listado/estudiantes/dos', views.listadoEstudiantesDos,
             name='listadoEstudiatesDos'),
+        path('listado/estudiantes/personalizado', views.listadoEstudiantesTelefono,
+            name='listadoEstudiatesTelefono'),
  ]
+ 
