@@ -5,7 +5,7 @@ class Pais(models.Model):
     nombre = models.CharField(max_length=100)
     capital = models.CharField(max_length=100)
     numero_provincias = models.IntegerField()
-    número_habitantes = models.IntegerField()
+    numero_habitantes = models.IntegerField()
     def __str__(self):
         return "%s %s %d %d" % (self.nombre, self.capital,
         self.numero_provincias, self.número_habitantes)

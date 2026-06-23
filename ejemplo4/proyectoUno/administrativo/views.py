@@ -122,3 +122,23 @@ def obtener_pais(request, id):
     # en el template
     informacion_template = {'pais': pais}
     return render(request, 'obtener_Pais.html', informacion_template)
+
+def editar_pais(request, id):
+    """
+    """
+    print("---------------")
+    print(request)
+    print("---------------")
+    pais = Pais.objects.get(pk=id)
+    # Deber: consultar
+    if request.method=='POST':
+        formulario = PaisForm(request.POST, instance=pais)
+        print(formulario.errors)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect(index)
+    else:
+        formulario = PaisForm(instance=pais)
+    diccionario = {'formulario': formulario}
+
+    return render(request, 'editarPais.html', diccionario)

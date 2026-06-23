@@ -11,5 +11,5 @@ class EstudianteForm(ModelForm):
 class PaisForm(ModelForm):
     class Meta:
         model = Pais
-        fields = ['nombre', 'capital', 'numero_provincias', 'número_habitantes']
+        fields = ['nombre', 'capital', 'numero_provincias', 'numero_habitantes']
 
